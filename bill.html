@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="bill.js" defer></script>
+</head>
+<body>
+    <h1>Bill Calculation</h1>
+
+    <p>
+        <label name="bill">Enter Your BillAmount</label>
+        <input
+        type="number"
+        name="billamount"
+        id="billamount"
+        />
+    </p>
+
+    
+    <p>
+        <label name="tip">Enter Your Tip Amount</label>
+        <input
+        type="number"
+        name="tipamount"
+        id="tipamount"
+        
+        oninput="bill(this.value)"/>
+    </p>
+   <p>Total bill amount:<span id="total"></span></p> 
+    <p>Tip Percentage:<span id="tippercentage"></span></p>
+</body>
+</html>
