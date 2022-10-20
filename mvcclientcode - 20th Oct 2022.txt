@@ -1,0 +1,52 @@
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using SofturaEmpClient.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Text;
+
+namespace SofturaEmpClient.Controllers
+{
+    public class EmpController : Controller
+    {
+        public static List<SofturaEmp> empinfo = new List<SofturaEmp>();
+        public async Task<IActionResult> Index()
+        {
+            using(var client=new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/Json"));
+                HttpResponseMessage Res = await client.GetAsync("https://localhost:44350/api/SofturaEmps");
+                if (Res.IsSuccessStatusCode)
+                {
+                    var empres = Res.Content.ReadAsStringAsync().Result;
+                    empinfo = JsonConvert.DeserializeObject<List<SofturaEmp>>(empres);
+                }
+            }
+            return View(empinfo);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(SofturaEmp e)
+        {
+            using(var client=new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(e), Encoding.UTF8, "application/json");
+                using (var response = await client.PostAsync("https://localhost:44350/api/SofturaEmps",content))
+                {
+                    string apiresponse = await response.Content.ReadAsStringAsync();
+                    var empobj = JsonConvert.DeserializeObject<SofturaEmp>(apiresponse);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+    }
+}

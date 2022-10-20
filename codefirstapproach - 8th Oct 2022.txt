@@ -1,0 +1,52 @@
+EFCore Code first approach:
+
+1. EF core
+2. EF core SQL
+3. EF core tools
+
+from class we are trying to create a database
+
+1. create  a class
+public class Product
+    {
+        [Key]
+        public int Pid { get; set; }
+        public string Pname { get; set; }
+        public float Price { get; set; }
+        public int Qty { get; set; }
+        public DateTime Dom { get; set; }
+    }
+
+2 create a context class 
+public class SofturaShoppingContext:DbContext
+    {
+        public SofturaShoppingContext() { }
+
+        public SofturaShoppingContext(DbContextOptions<SofturaShoppingContext> options):base(options)
+        {
+
+        }
+
+        public DbSet<Product> Products { get; set; }
+
+    }
+
+3. startup.cs
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<SofturaShoppingContext>(options =>
+      options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllersWithViews();
+        }
+
+
+4. appsettings.json 
+"ConnectionStrings": {
+    "DefaultConnection": "Server=.;Database=SofturaShopping;Trusted_Connection=True;"
+  },
+
+
+5. Add-Migration "migr1"
+
+6. Update-database
+ 

@@ -1,0 +1,25 @@
+Entity Framework Core - 5.0.17
+EFCore SQL server
+EFCore Tools
+
+private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
+ 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+
+PM Console: 
+Scaffold-DbContext "Server=.;Database=OrgWB;Trusted_Connection=True;"Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=.;Database=OrgWB;User Id=username;Password=password;"Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+In appsettings.json:
+ "ConnectionStrings": {
+      "DefaultConnection": "Server=.;Database=OrgWB;Trusted_Connection=True;"
+    },
+
+ Startup.cs
+ services.AddDbContext<OrgWBContext>(options =>
+       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+

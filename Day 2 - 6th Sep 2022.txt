@@ -1,0 +1,85 @@
+Notes
+C# Program
+
+Java
+C, C++
+
+using System - Keyword - Namespace - Built-in classes
+case sensitive
+; - terminator
+{
+block
+}
+
+class -name
+{
+public static void Main()//Entry point? - access specifier - static  -one copy - void - nothing - Main - One Main
+{
+
+}
+}//delimiter - limits
+
+To compile  - csc Filename.cs // CsharpCompiler
+To execute - Filename
+
+
+Variable - Memory location used to store data - accessed by name
+
+DataType - measuring yard stick - how much space you need
+text
+numerals
+date
+image
+
+Operators
+assignment =
+artithmetic = +, -, *, /
+Comparison
+Logical
+String to int = type casting
+Control FLow Statement
+Check the input follows statndards
+if
+switch case - category
+for
+foreach
+while
+
+else if - multiple conditions
+0-12 - paediatrics
+13 -20 - Adols
+20-60 - General
+60 - Gere
+Consition with in a condition - nested if
+&& - both condition
+||
+
+
+Repeats itself - for loop
+
+Arrays
+Collection of data of the same datatype
+Data Structure - variables next to each other
+elements
+
+datatype [] ArrayName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

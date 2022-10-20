@@ -1,0 +1,116 @@
+Software Engineering 
+SDLC - Software DEvelopment Life Cycle
+
+Time Duration Ideation to Delivery - WhatsApp / Windows 11 - Microsoft 
+Next Version  - Discuss - 
+Ananlysis - Android, iOS, - Space Technology, Touch enabled - idea
+			Feasibility
+			Resources
+			Time 
+			Pros and Cons 
+Planning
+			How, What, When, Timeline
+Design
+			Sketch or Frame - flow chart  - Blue Print 
+Development
+			UI / BL/ DAL
+			Java or Dot Net Stack
+Testing
+			Check - Validate
+Implementation / Deployment
+			RTM
+			Push / Pull / Update - security - fixes
+Maintenance
+			Support
+
+Software Development Models
+Waterfall Model - Top down approach - 2 years - neither client nor developer
+Iterative
+Spiral 
+Prototype 
+Agile Development - 72 hours
+
+
+What are we going do?
+Developers?  Web Page / Application / Automate
+top 5 mobile apps - Zepto / IRCTC / Passport / Indian Passport
+Enterprise Development -Business client 
+NetBanking - End user / Customer / Client - Bank EMployees - Internal Users
+Retail Business - 
+
+
+.Net 
+Language - OS - task done
+ How old is Dot Net? - 30 / 20 /20
+
+History Dot Net Framework
+Language dev
+C, C++, Java , VB - Play - Drag and Drop
+Internet - Java - JSP
+IE ? 
+Tim Berner Lee - Interview
+IBM
+Sun Microsystem Vs Microsoft
+ASP - Active Server Pages
+- 
+Dot Net Framework - 2001/2002
+
+Framework - Collection of Classes / Library and Tools
+Structure - Top of which you can build your application
+
+Compiler - Mulitple Languages - CLR - Common Language Runtime
+Source Code - MSIL Compiler - MSIL Code - JIT Compiler - Executable code - Managed Code
+
+Automatic Memory Management Threading
+Framework - Namespace  - System - IO, Data, Globalisation, Serialization
+Collection of Built in classes, Methods, Interfaces - library
+UI - Console / Desktop / Web Browser / Device / IoT
+
+Using any Language - VB, VC++, VC#, J#
+
+Server Side Language
+HTML Markup Language
+Presentation Language - Rendering Page
+W3C - WorldWideWeb Consortium
+<img src = ****.jpg>
+absolute path = 
+relative path =/
+
+
+<b>
+<strong>
+<em>
+<i>
+<small>
+<mark>
+<sub>
+<sup>
+
+comment section - comments - hide
+
+style
+style sheet - Apply style to HTML Page
+inline style
+internal
+external
+
+CSS - cascading StyleSheet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
