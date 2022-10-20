@@ -1,0 +1,208 @@
+use AdventureWorks2019
+go
+--other than department id =16
+select DepartmentID, Name, GroupName, ModifiedDate
+from HumanResources.Department
+where DepartmentID != 16
+
+select DepartmentID, Name, GroupName, ModifiedDate
+from HumanResources.Department
+where DepartmentID <> 16
+
+--Person.Person - Kay
+select Title, FirstName, LastName
+from Person.Person
+where FirstName = 'Ken'
+
+select Title, FirstName, LastName
+from Person.Person
+where FirstName like 'Ken'
+--endswith son - wildcard symbol
+select Title, FirstName, LastName
+from Person.Person
+where LastName like '%son'
+
+--'ae'
+select Title, FirstName, LastName
+from Person.Person
+where FirstName like '%ae%'
+
+--Names with just 3 characters
+select BusinessEntityID, Title, FirstName, LastName
+from Person.Person
+where firstName like '_____'
+select BusinessEntityID, JobTitle, Gender, BirthDate
+
+from HumanResources.Employee
+where gender not like 'M'
+
+--unique jobroles
+select BusinessEntityID, JobTitle, Gender, BirthDate
+from HumanResources.Employee
+where  JobTitle like '%Engineer%'
+
+select  distinct JobTitle ,  Gender
+from HumanResources.Employee
+
+select  distinct JobTitle ,  Gender, BusinessEntityID
+from HumanResources.Employee
+
+
+select BusinessEntityID, JobTitle, Gender, BirthDate
+from HumanResources.Employee
+where JobTitle like 'Sales%'
+
+select count(firstname)
+from person.Person
+select count(*)
+from sales.SalesOrderDetail
+select Title, FirstName, LastName
+from Person.Person
+where Title is null
+
+select isnull(Title, 'Xx'), Firstname
+from Person.Person
+
+--other than null
+select Title, FirstName, LastName
+from Person.Person
+where Title is not null
+
+--Joins
+--Select
+--from Table1
+--join Table2
+--on table1.field = table2.field
+
+select BusinessEntityID, dept.DepartmentID, Name, StartDate
+from HumanResources.Department dept
+join HumanResources.EmployeeDepartmentHistory dhis
+on dept.DepartmentID = dhis.DepartmentID
+
+select * from HumanResources.EmployeeDepartmentHistory
+select * from HumanResources.Shift
+
+
+
+
+select BusinessEntityID , dept.Name as DepartmentName, sft.Name as ShiftName,  dhis.ShiftID, StartDate
+from HumanResources.EmployeeDepartmentHistory dhis
+join HumanResources.Shift sft
+on dhis.ShiftID = sft.ShiftID
+join HumanResources.Department dept
+on dept.DepartmentID = dhis.DepartmentID
+
+--BUsinessEntityID, Firstname, Lastname, Gender, MAritalStatus
+--humanresources.Employee - Person.Peron
+
+select emp.BUsinessEntityID, Firstname, Lastname, Gender, MAritalStatus
+from HumanResources.Employee emp
+join Person.Person per
+on emp.BusinessEntityID = per.BusinessEntityID
+
+--LEft outer join
+select * from HumanResources.Department
+
+select dept.DepartmentID, Name, BusinessEntityID, dept.ModifiedDate
+from HumanResources.Department dept
+left outer join HumanResources.EmployeeDepartmentHistory ehis
+on dept.DepartmentID = ehis.DepartmentID
+
+--right outer join
+select per.BusinessEntityID, FirstName, JobTitle
+from HumanResources.Employee emp
+right outer join person.Person per
+on emp.BusinessEntityID =  per.BusinessEntityID
+
+--cross join - permutation combination
+select BusinessEntityID, Name, StartDate, dept.DepartmentID
+from HumanResources.Department dept
+cross join HumanResources.EmployeeDepartmentHistory dhis
+--on dept.departmentid = dhis.departmentid
+
+select MAx(Rate), BusinessEntityID
+from HumanResources.EmployeePayHistory
+
+
+select  avg(rate)
+from HumanResources.EmployeePayHistory
+select * from HumanResources.EmployeePayHistory
+
+select Max(rate) HighestSalary, Name
+from HumanResources.EmployeePayHistory pay
+join HumanResources.EmployeeDepartmentHistory dhis
+on pay.BusinessEntityID = dhis.BusinessEntityID
+join  HumanResources.Department dept
+on dept.DepartmentID = dhis.DepartmentID
+group by Name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
